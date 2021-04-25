@@ -47,7 +47,7 @@ console.log(mergedObj2); // { name: 'John', age: 30 }
 
 
 
-// Lab 4: Copy an array
+// Lab 4: Copy an array (Shallow Copy)
 let array3 = [1, 2, 3, 4, 5];
 let copyArray = [...array3];
 console.log(copyArray); // [ 1, 2, 3, 4, 5 ]
