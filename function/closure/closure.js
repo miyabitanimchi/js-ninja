@@ -67,5 +67,29 @@ myFunc();
 // alert foo!
 // Output to console foo! 
 
-// In this case, the function funcB and the (lexical) environment when funcB was defined
-// are defined as the closure.
+// In this case, myFunc, which has the function funcB and the (lexical) environment when funcB was defined,
+// are defined as its closure.
+
+
+
+
+/* The condition a function becomes the closure */
+// It becomes the closure when the function is used outside of the scope 
+// which the function is defined.
+
+
+
+
+/* How the closure is used, when it can be useful */
+
+// 1. Creating private properties and methods, and keeping them
+const getSecretCode = (function () {
+  const secretCode = "me3t9gj#dvnbl)+4g";
+
+  return function() {
+    return secretCode;
+  };
+})(); // (IIFE)
+
+console.log(getSecretCode());
+// getSecretCode is its closure and keeps the string "me3t9gj#dvnbl)+4g" as the lexical environment
