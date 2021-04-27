@@ -44,7 +44,7 @@ console.log(testB()); // 100
 
 
 
-/* How the closure works */
+/* How closures work */
 function funcA() {
   var foo = "foo!";
   console.log(foo); // This is executed by funcA() from "var myFunc = funcA()"
@@ -73,16 +73,17 @@ myFunc();
 
 
 
-/* The condition a function becomes the closure */
-// It becomes the closure when the function is used outside of the scope 
+/* The condition a function becomes a closure */
+// It becomes a closure when the function is used outside of the scope 
 // which the function is defined.
 
 
 
 
-/* How the closure is used, when it can be useful */
+/* How the closures are used, when they can be useful */
 
 // 1. Creating private properties and methods, and keeping them
+// example 1: Save a passcode without being interefered from outside
 const getSecretCode = (function () {
   const secretCode = "me3t9gj#dvnbl)+4g";
 
@@ -93,3 +94,48 @@ const getSecretCode = (function () {
 
 console.log(getSecretCode());
 // getSecretCode is its closure and keeps the string "me3t9gj#dvnbl)+4g" as the lexical environment
+
+// example 2: Implement a private counter variable
+const counter = (function() {
+  let count = 0; // a private counter variable
+  return function () {
+    count ++;  // Update when the function counter() is called
+    return count;
+  };
+}());
+
+console.log(counter()); // 1
+console.log(counter()); // 2
+
+// Tips! A variable in the environment which closures keep can update itself.
+// クロージャが記憶している環境内の変数はクロージャ自身によって更新することができる。
+
+
+
+// 2. Using as a higher-order function
+function circle_area_func(pi){
+  function circle_area(radius){
+return pi * radius * radius; // return the function which calculate the area
+}
+  return circle_area;
+}
+
+//function that pi is set as 3.1415926
+caFunc1 = circle_area_func(3.1415926)
+
+//function that pi is set as 3.14
+caFunc2 = circle_area_func(3.14)
+
+// pass radius to the parameters
+console.log(caFunc1(2)); // 12.5663704
+console.log(caFunc2(2)); // 12.56
+
+
+// References:
+// MDN: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures
+// WEMO.tech: 【JavaScriptの基礎】レキシカルスコープとクロージャを理解する
+// https://wemo.tech/904
+// YouTube: JavaScript: JavaScriptのクロージャについて世界一わかりやすく解説してみます【プログラミング言語/クロージャとは】
+// https://www.youtube.com/watch?v=OY6plmd5qPE
+
+// Thank you for the great sources!
