@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+<!-- [querySelector] More syntax I need to learn -->
+<!-- 1. -->
+<h1 class="highlight">A heading with class="highlight"</h1>
+<!-- This will be chosen ↓ -->
+<p class="highlight">A paragraph with class="highlight".</p> 
+
+<!-- 2. -->
+<div>
+  <p>Img 1</p>
+  <!-- This will be chosen ↓ -->
+  <img src="" alt="">
+</div>
+
+<div>
+  <p>Img 2</p>
+  <img src="" alt="">
+</div>
+
+<!-- 3. -->
+<button>button 1</button>
+<!-- This will be chosen ↓ -->
+<button type="button">button 2</button>
+<button type="submit">button 3</button>
+
+<!-- * querySelector() only works for the FIRST ELEMENT even though you write like below -->
+<!-- only the text in h2 will be red ↓ -->
+<h2>hello world</h2>
+<h3>konnichiha world</h3>
+<!-- If the order of h2 and h3 are the opposite, only the text in h3 will be red -->
+
+<script>
+  document.querySelector("h2, h3").style.color = "red";
+</script>
+
+  <script src="querySelector_querySelectorAll.js"></script>
+</body>
+</html>
