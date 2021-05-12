@@ -1,4 +1,4 @@
-/* querySelector, querySelectorAll / May the 4th be with you! 2021 */
+/* querySelector, querySelectorAll / May the 4th be with you! & 5th 2021 */
 
 
 /* What is querySelector? */
