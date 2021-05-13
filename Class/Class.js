@@ -59,6 +59,10 @@ console.log(newEmployee2); // Can't refer to the class with the name "NameEmploy
 // created within a class. by w3schools
 // It has to be only one constructor method in a class.
 
+// * What is the super keyword?
+// The super keyword represents its parent class of an extended class and it is to call
+// the constructor (like the parent's methods and the parameter(s)).
+
 // References:
 // MDN: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes
 // w3schools: https://www.w3schools.com/js/js_classes.asp
