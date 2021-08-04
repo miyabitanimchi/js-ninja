@@ -9,6 +9,8 @@
 and ' (apostrophe), in a string to their corresponding HTML entities.
  */
 
+
+// solution 1
 function convertHTML(str) {
   const strArr = str.split("");
   // console.log(strArr);
@@ -41,4 +43,26 @@ function convertHTML(str) {
   return strArr.join("");
 }
 
-console.log(convertHTML('Stuff in "quotation marks"')); // Stuff in &quot;quotation marks&quot;
+// console.log(convertHTML('Stuff in "quotation marks"')); // Stuff in &quot;quotation marks&quot;
+
+// solution 2
+
+const convertHTML2 = (str) => {
+  const entityPairs = {
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&apos;"
+  }
+
+  console.log(str.replace(/[&<>"']/g, (match) => entityPairs[match]));
+  return str.replace(/[&<>"']/g, (match) => entityPairs[match]);
+}
+
+// g option... global 置き換えたい文字列が複数ある場合に、その全てを置き換える
+// i option... ignore case 大文字、小文字を区別しない
+// []... 文字集合を表す、角かっこで囲まれた文字のいずれか１個にマッチする。全ての文字が入っている必要はない。
+// replace()... a string or a function you want to replace(which returns a string you want to replace) can be set in the second parameter
+
+console.log(convertHTML2('Stuff in "quotation marks"')); // Stuff in &quot;quotation marks&quot;
