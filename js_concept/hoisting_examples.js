@@ -44,9 +44,9 @@
 
 // Question 5:
 
-// function hoistingExample() {
-//   console.log("Value of a in local scope: ", a); // Reference error: a is not declared
-// }
-// console.log("Value of a in global scope: ", a); // undefined
-// var a = 1;
-// hoistingExample();
+function hoistingExample() {
+  console.log("Value of a in local scope: ", a); // 1
+}
+console.log("Value of a in global scope: ", a); // undefined
+var a = 1;
+hoistingExample();
