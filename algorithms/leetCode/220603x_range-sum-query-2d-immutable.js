@@ -1,3 +1,8 @@
+// June 3 2022
+// Range Sum Query 2D - Immutable
+// https://leetcode.com/problems/range-sum-query-2d-immutable/
+// * Not solved by myself
+
 const NumMatrix = function (matrix) {
   this.matrix = matrix;
 };
