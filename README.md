@@ -7,3 +7,4 @@
 - Understand June 14th algorithm
 - Understand June 15th algorithm
 - Understand June 16th algorithm
+- Understand June 17th algorithm
